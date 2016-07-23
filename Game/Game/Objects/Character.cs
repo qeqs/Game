@@ -27,6 +27,7 @@ namespace Game.Objects
                 };
             }
         }
+        public int Health { get; set; }
 
         public Character(AbstractCharacter character)
         {

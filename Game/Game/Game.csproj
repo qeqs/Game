@@ -60,6 +60,9 @@
     <Compile Include="Objects\Character.cs" />
     <Compile Include="Objects\AbstractStaticObject.cs" />
     <Compile Include="Objects\Characters\AbstractCharacter.cs" />
+    <Compile Include="Objects\Characters\Assasin.cs" />
+    <Compile Include="Objects\Characters\Warrior.cs" />
+    <Compile Include="Objects\Characters\Wizard.cs" />
     <Compile Include="Objects\IObject.cs" />
     <Compile Include="Objects\Skills\Spell.cs" />
     <Compile Include="Objects\Skills\Weapon.cs" />
