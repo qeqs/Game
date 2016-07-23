@@ -11,7 +11,7 @@ namespace Game.Objects
 {
     class Character : IObject
     {
-        private Spell _spell;
+        private Spell _spell;//TODO: List of spells, factory of list of spells
         private Weapon _weapon;
         private Body _body;
 
@@ -21,9 +21,11 @@ namespace Game.Objects
             {
                 return new Animation[]
                 {
-                    _spell.Animation,
+                    _body.Animation,
                     _weapon.Animation,
-                    _body.Animation
+                    _spell.Animation,                    
+                    
+                    
                 };
             }
         }
