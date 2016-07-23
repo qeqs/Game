@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Game.Graphics;
 
-namespace Game.Objects
+namespace Game.Objects.Skills
 {
-    interface IObject
+    abstract class Weapon
     {
-        Animation[] AnimationArray { get; }
+        public Animation Animation { get; private set; }
+        public abstract void Hit();
     }
 }
