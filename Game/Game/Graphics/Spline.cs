@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Objects
+namespace Game.Graphics
 {
-    abstract class AbstractStaticObject : IObject
+    class Spline
     {
-
     }
 }

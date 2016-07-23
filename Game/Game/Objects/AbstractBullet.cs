@@ -8,5 +8,6 @@ namespace Game.Objects
 {
     abstract class AbstractBullet:IObject
     {
+
     }
 }
