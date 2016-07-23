@@ -8,6 +8,5 @@ namespace Game
 {
     class Map
     {
-        public Map() { }
     }
 }
