@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Graphics
 {
-    class Spline
+    class Vector
     {
     }
 }

@@ -10,7 +10,7 @@ namespace Game
     class Map
     {
         private int cellSize;
-        private Spline[,] matrix;
+        private Sprite[,] matrix;
         public Map()
         {
             //TODO: создание готовой карты
@@ -22,7 +22,7 @@ namespace Game
         public int CellSize { get { return cellSize; }}
         public int LengthX { get { return matrix.GetLength(0); } }
         public int LengthY { get { return matrix.GetLength(1); } }
-        public Spline this [int x,int y]
+        public Sprite this [int x,int y]
         {
             get {
                 if (x < LengthX && y < LengthY)

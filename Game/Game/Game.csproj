@@ -53,7 +53,10 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Graphics\Animation.cs" />
-    <Compile Include="Graphics\Spline.cs" />
+    <Compile Include="Graphics\Config.cs" />
+    <Compile Include="Graphics\Point2.cs" />
+    <Compile Include="Graphics\Sprite.cs" />
+    <Compile Include="Graphics\Vector.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Objects\AbstractBullet.cs" />
     <Compile Include="Objects\Body.cs" />
