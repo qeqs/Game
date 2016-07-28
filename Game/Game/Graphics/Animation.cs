@@ -8,14 +8,44 @@ namespace Game.Graphics
 {
     class Animation
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        private Point2 loc;
+        private Sprite sprite;
+        public double X { get { return loc.x; } set { loc.x = value; } }
+        public double Y { get { return loc.y; } set { loc.y = value; } }
+        public double Duration { get; set; }
+
+        public Point2 Loc
+        {
+            get
+            {
+                return loc;
+            }
+
+            set
+            {
+                loc = value;
+            }
+        }
+
+        internal Sprite Sprite
+        {
+            get
+            {
+                return sprite;
+            }
+
+            set
+            {
+                sprite = value;
+            }
+        }
 
         public Animation() { }
-        public Animation(int x, int y)
+        public Animation(Point2 loc,double duration):this(loc.x,loc.y,duration) { }
+        public Animation(double x, double y,double duration)
         {
-            X = x;
-            Y = y;
+            loc = new Point2(x, y);
+            Duration = duration;
         }
     }
 }

@@ -52,8 +52,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameController.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Config.cs" />
+    <Compile Include="Graphics\Frame.cs" />
+    <Compile Include="Graphics\FramePainter.cs" />
     <Compile Include="Graphics\Point2.cs" />
     <Compile Include="Graphics\Sprite.cs" />
     <Compile Include="Graphics\Vector.cs" />

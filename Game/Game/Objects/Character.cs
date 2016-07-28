@@ -29,6 +29,13 @@ namespace Game.Objects
                 };
             }
         }
+        public Sprite[] CurrentViewState
+        {
+            get
+            {
+                return AnimationArray.Select(x=>x.)
+            }
+        }
         public int Health { get; set; }
 
         public Character(AbstractCharacter character)

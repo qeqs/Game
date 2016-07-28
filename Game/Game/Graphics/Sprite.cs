@@ -12,6 +12,42 @@ namespace Game.Graphics
         SpriteEnum name;
         Point2 loc;
         Size size;
+        #region props
+        public SpriteEnum Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+
+        internal Point2 Loc
+        {
+            get
+            {
+                return loc;
+            }
+
+            set
+            {
+                loc = value;
+            }
+        }
+
+        public Size Size
+        {
+            get
+            {
+                return size;
+            }
+
+            set
+            {
+                size = value;
+            }
+        }
+        #endregion
+        //
         //Image[] images; 
         //public Image this[int i] 
         //{ 
