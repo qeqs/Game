@@ -10,5 +10,6 @@ namespace Game.Objects
     interface IObject
     {
         Animation[] AnimationArray { get; }
+        void Update();
     }
 }
