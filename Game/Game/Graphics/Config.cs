@@ -12,6 +12,7 @@ namespace Game.Graphics
     }
     class Config//сюда кидаем константы для графики(загружать из файла?)
     {
+        public static int MS_PER_UPDATE;
         public class SpriteConfig
         {
             public string texture;
@@ -34,6 +35,12 @@ namespace Game.Graphics
 
         static Config()
         {
+
+            string[] s = Properties.Resources.Config.Split(' ');
+            s = s.SkipWhile(x => { int i; return !int.TryParse(x, out i); }).ToArray();
+
+            MS_PER_UPDATE = int.Parse(s[0]);
+
             Sprites.Add(SpriteEnum.background, new SpriteConfig(null));//здесь закидываем текстуры
             //TODO: написать loader для загрузки текстурок
         }

@@ -13,6 +13,13 @@ namespace Game.Graphics
         {
             sprites.AddRange(obj);
         }
+        public void Add(params Animation[] obj)
+        {
+            foreach(Animation a in obj)
+            {
+                sprites.Add(a.Sprite);
+            }
+        }
         private void SortByDepth()
         {
             sprites.OrderBy(x => Config.Sprites[x.Name].depth);
