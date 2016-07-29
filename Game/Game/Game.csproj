@@ -80,7 +80,9 @@
     <Compile Include="Objects\Skills\Weapons\Sword.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\ArtIntelStrategy.cs" />
     <Compile Include="Strategy\IStrategy.cs" />
+    <Compile Include="Strategy\KeyboardStrategy.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
