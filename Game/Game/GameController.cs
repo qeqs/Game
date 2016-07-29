@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Game
 {
@@ -17,18 +18,19 @@ namespace Game
         private FramePainter painter = new FramePainter();
         private Dictionary<SpriteEnum, Image> textures;
         private Stopwatch time = new Stopwatch();
-        public void Process()
+        public GameController()
+        {
+        }
+        public void Process(BufferedGraphics gx)
         {
             //MS_PER_UPDATE - это дробность наших обновлений игры. 
-
-           // double previous = getCurrentTime();
+            
             double lag = 0.0;
             while (true)
             {
-
-                // double current = getCurrentTime();
-                double elapsed = time.ElapsedMilliseconds;//current - previous;
-                time.Restart();//previous = current;
+                
+                double elapsed = time.ElapsedMilliseconds;
+                time.Restart();
                 lag += elapsed;
 
                 //processInput();
@@ -39,7 +41,7 @@ namespace Game
                     lag -= Config.MS_PER_UPDATE;
                 }
 
-                painter.Render(frame,textures,lag / Config.MS_PER_UPDATE);
+                painter.Render(gx.Graphics,frame,textures,lag / Config.MS_PER_UPDATE);
             }
         }
         private Frame Update()
@@ -47,7 +49,12 @@ namespace Game
             Frame frame = new Frame();
 
             //здесь нужно выбрать объекты которые попали в кадр и поместиь их в frame
+
             //здесь нужно вызвать update у всех объектов
+            foreach(IObject o in objects)
+            {
+                o.Update();
+            }
 
             return frame;
         }
