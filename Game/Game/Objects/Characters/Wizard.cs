@@ -14,6 +14,7 @@ namespace Game.Objects.Characters
         public override Spell CreateSpell()
         {
             return new Fireball();
+
         }
 
         public override Weapon CreateWeapon()
