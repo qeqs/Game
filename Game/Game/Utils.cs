@@ -16,21 +16,22 @@ namespace Game
         /// <param name="from">текущее положение</param>
         /// <param name="where">положение цели</param>
         /// <returns>Координаты тайла</returns>
-        //static public int[] FindPath(int[] from, int[] where)
-        //{
-        //    for (int k = 0; k < map.LengthX; k++)
-        //        for (int i = 0; i < map.LengthX; i++)
-        //            for (int j = 0; j < map.LengthX; j++)
-        //                if (map)
-        //}
-
-        //static public int[][] FloydWarshall(int[][] matrix)
-        //{
-        //    int n = matrix.GetLength(0);
-        //    for (int k = 0; k < n; k++)
-        //        for (int i = 0; i < n; i++)
-        //            for ()
-        //}
+        public static int[] FindPath(int[] from, int[] where)
+        {
+            return null;
+        }
+        //qweqwdas
+        public static int[,] FloydWarshall(int[,] matrix)
+        {
+            int n = matrix.GetLength(0);
+            for (int k = 0; k < n; k++)
+                for (int i = 0; i < n; i++)
+                    for (int j = 0; j < n; j++)
+                        if ((matrix[i, k] * matrix[k, j] != 0) && (i != j))
+                            if ((matrix[i, k] + matrix[k, j] < matrix[i, j]) || (matrix[i, j] == 0))
+                                matrix[i, j] = matrix[i, k] + matrix[k, j];
+            return matrix;
+        }
 
         /// <summary>
         /// Выдает координаты тех тайлов карты, которые были изменены
@@ -38,7 +39,7 @@ namespace Game
         /// <param name="loc">положение картинки</param>
         /// <param name="size">размеры картинки</param>
         /// <returns>координаты тайлов на матрице карты, которые нужно перерисовать</returns>
-        static public List<int[]> GetChangedBackground(int[] loc, int[] size)
+        public static List<int[]> GetChangedBackground(int[] loc, int[] size)
         {
             res.Clear();
             int x = loc[0] / map.CellSize;
