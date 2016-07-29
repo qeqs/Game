@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Game.Strategy
 {
-    interface IStrategy
+    class ArtIntelStrategy : IStrategy
     {
-        void Move();
+        public void Move()
+        {
+
+        }
     }
 }

@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    
     class GameController
     {
         private List<IObject> objects = new List<IObject>();
