@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Game.Objects.Skills;
+using Game.Objects.Skills.Weapons;
+using Game.Objects.Skills.Spells;
 
 namespace Game.Objects.Characters
 {
@@ -11,12 +13,12 @@ namespace Game.Objects.Characters
     {
         public override Spell CreateSpell()
         {
-            return null;
+            return new LegendaryHit();
         }
 
         public override Weapon CreateWeapon()
         {
-            return null;
+            return new Sword();
         }
     }
 }

@@ -71,7 +71,13 @@
     <Compile Include="Objects\Characters\Wizard.cs" />
     <Compile Include="Objects\IObject.cs" />
     <Compile Include="Objects\Skills\Spell.cs" />
+    <Compile Include="Objects\Skills\Spells\Fireball.cs" />
+    <Compile Include="Objects\Skills\Spells\Invisible.cs" />
+    <Compile Include="Objects\Skills\Spells\LegendaryHit.cs" />
     <Compile Include="Objects\Skills\Weapon.cs" />
+    <Compile Include="Objects\Skills\Weapons\Bow.cs" />
+    <Compile Include="Objects\Skills\Weapons\Stick.cs" />
+    <Compile Include="Objects\Skills\Weapons\Sword.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
@@ -100,7 +106,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Objects\State\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
