@@ -16,10 +16,22 @@ namespace Game
         /// <param name="from">текущее положение</param>
         /// <param name="where">положение цели</param>
         /// <returns>Координаты тайла</returns>
-        static public int[] FindPath(int[] from, int[] where)
-        {
-            return null;
-        }
+        //static public int[] FindPath(int[] from, int[] where)
+        //{
+        //    for (int k = 0; k < map.LengthX; k++)
+        //        for (int i = 0; i < map.LengthX; i++)
+        //            for (int j = 0; j < map.LengthX; j++)
+        //                if (map)
+        //}
+
+        //static public int[][] FloydWarshall(int[][] matrix)
+        //{
+        //    int n = matrix.GetLength(0);
+        //    for (int k = 0; k < n; k++)
+        //        for (int i = 0; i < n; i++)
+        //            for ()
+        //}
+
         /// <summary>
         /// Выдает координаты тех тайлов карты, которые были изменены
         /// </summary>
