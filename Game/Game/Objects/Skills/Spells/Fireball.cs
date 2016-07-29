@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Graphics;
 
-namespace Game.Objects.Skills
+namespace Game.Objects.Skills.Spells
 {
-    abstract class Spell
+    class Fireball : Spell
     {
-        public abstract void SpellIt();
+        public override void SpellIt()
+        {
+
+        }
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game.Graphics;
 
-namespace Game.Objects.Skills
+namespace Game.Objects.Skills.Weapons
 {
-    abstract class Spell
+    class Stick : Weapon
     {
-        public abstract void SpellIt();
+        public override void Hit()
+        {
+
+        }
     }
 }

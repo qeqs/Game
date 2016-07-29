@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Objects
 {
-    abstract class AbstractBullet:IObject
+    abstract class AbstractBullet : IObject
     {
 
     }

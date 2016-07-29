@@ -21,19 +21,8 @@ namespace Game.Objects
             {
                 return new Animation[]
                 {
-                    _body.Animation,
-                    _weapon.Animation,
-                    _spell.Animation,                    
-                    
-                    
+
                 };
-            }
-        }
-        public Sprite[] CurrentViewState
-        {
-            get
-            {
-                return AnimationArray.Select(x=>x.)
             }
         }
         public int Health { get; set; }
