@@ -8,7 +8,7 @@ namespace Game.Graphics
 {
     class Frame
     {
-        private List<Sprite> sprites=new List<Sprite>();
+        public List<Sprite> sprites=new List<Sprite>();
         public void Add(params Sprite[] obj)
         {
             sprites.AddRange(obj);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,14 @@ namespace Game.Graphics
         public Point2(double x, double y)
         {
             this.x = x; this.y = y;
+        }
+        public PointF ToPointF()
+        {
+            return new PointF((float)x, (float)y);
+        }
+        public Point ToPoint()
+        {
+            return new Point((int)x, (int)y);
         }
         public void Normalize(double k)
         {

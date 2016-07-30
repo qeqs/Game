@@ -41,7 +41,7 @@ namespace Game
                     lag -= Config.MS_PER_UPDATE;
                 }
 
-                painter.Render(gx.Graphics,frame,textures,lag / Config.MS_PER_UPDATE);
+                painter.Render(gx,frame,textures,lag / Config.MS_PER_UPDATE);
             }
         }
         private Frame Update()
