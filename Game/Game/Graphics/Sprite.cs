@@ -64,7 +64,7 @@ namespace Game.Graphics
             size = new Size(w, h);
 
         }
-        public Sprite(SpriteEnum name, Point2 loc, Size size) : this(name, loc.x, loc.y, size.Width, size.Height) { }
+        public Sprite(SpriteEnum name, Point2 loc, Size size) : this(name, loc.X, loc.Y, size.Width, size.Height) { }
 
 
     }
