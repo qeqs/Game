@@ -8,10 +8,14 @@ namespace Game.Graphics
 {
     class Animation
     {
+        Point2[] points = new Point2[3];
         private Point2 loc;
         private Sprite sprite;
-        public double X { get { return loc.X; } set { loc.X = value; } }
-        public double Y { get { return loc.Y; } set { loc.Y = value; } }
+        private double angle;
+        private double durationCounter = 0;
+        int frame = 0;
+        public double X { get { return loc.X; } set { loc.X = (float)value; } }
+        public double Y { get { return loc.Y; } set { loc.Y = (float)value; } }
         public double Duration { get; set; }
 
         public Point2 Loc
@@ -23,29 +27,60 @@ namespace Game.Graphics
 
             set
             {
-                loc = value;
+                if (!loc.Equals(value))
+                {
+                    double x = value.X - loc.X;
+                    double y = value.Y - loc.Y;
+                    loc = value;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        points[i].X += x;
+                        points[i].Y += y;
+                    }
+                }
             }
         }
 
-        internal Sprite Sprite
+        public Sprite Sprite
         {
             get
             {
                 return sprite;
             }
+        }
+        public double R { get { return Math.Sqrt((sprite.Size.Height / 2) * (sprite.Size.Height / 2) + (sprite.Size.Width / 2) * (sprite.Size.Width / 2)); } }
+        public double Angle
+        {
+            get
+            {
+                return angle;
+            }
 
             set
             {
-                sprite = value;
+                angle = value;
             }
         }
 
-        public Animation() { }
-        public Animation(Point2 loc,double duration):this(loc.X,loc.Y,duration) { }
-        public Animation(double x, double y,double duration)
+        public Point2 Center
         {
-            loc = new Point2(x, y);
-            Duration = duration;
+            get
+            {
+                return new Point2(loc.X + sprite.Size.Width / 2.0f, loc.Y + sprite.Size.Height / 2.0f);
+            }
+        }
+
+        public Point2[] Points
+        {
+            get
+            {
+                return points;
+            }
+
+            set
+            {
+                points = value;
+            }
         }
     }
 }
