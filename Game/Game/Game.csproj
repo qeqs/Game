@@ -53,6 +53,8 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormContext\FormContext.cs" />
+    <Compile Include="FormContext\IFormContext.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Config.cs" />

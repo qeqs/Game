@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Game.Strategy
+namespace Game.FormContext
 {
-    class ArtIntelStrategy : IStrategy
+    interface IFormContext
     {
-        public void Update()
-        {
-
-        }
+        KeyEventHandler Handler { get; set; }
     }
 }
