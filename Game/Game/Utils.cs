@@ -10,28 +10,6 @@ namespace Game
     {
         public static Map map = new Map();
         private static List<int[]> res = new List<int[]>();
-        /// <summary>
-        /// возвращает координаты, к которым следует идти
-        /// </summary>
-        /// <param name="from">текущее положение</param>
-        /// <param name="where">положение цели</param>
-        /// <returns>Координаты тайла</returns>
-        public static int[] FindPath(int[] from, int[] where)
-        {
-            return null;
-        }
-        //qweqwdas
-        public static int[,] FloydWarshall(int[,] matrix)
-        {
-            int n = matrix.GetLength(0);
-            for (int k = 0; k < n; k++)
-                for (int i = 0; i < n; i++)
-                    for (int j = 0; j < n; j++)
-                        if ((matrix[i, k] * matrix[k, j] != 0) && (i != j))
-                            if ((matrix[i, k] + matrix[k, j] < matrix[i, j]) || (matrix[i, j] == 0))
-                                matrix[i, j] = matrix[i, k] + matrix[k, j];
-            return matrix;
-        }
 
         /// <summary>
         /// Выдает координаты тех тайлов карты, которые были изменены

@@ -10,8 +10,8 @@ namespace Game.Graphics
     {
         private Point2 loc;
         private Sprite sprite;
-        public double X { get { return loc.x; } set { loc.x = value; } }
-        public double Y { get { return loc.y; } set { loc.y = value; } }
+        public double X { get { return loc.X; } set { loc.X = value; } }
+        public double Y { get { return loc.Y; } set { loc.Y = value; } }
         public double Duration { get; set; }
 
         public Point2 Loc
@@ -41,7 +41,7 @@ namespace Game.Graphics
         }
 
         public Animation() { }
-        public Animation(Point2 loc,double duration):this(loc.x,loc.y,duration) { }
+        public Animation(Point2 loc,double duration):this(loc.X,loc.Y,duration) { }
         public Animation(double x, double y,double duration)
         {
             loc = new Point2(x, y);
