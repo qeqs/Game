@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +18,13 @@ namespace Game
         /// <param name="loc">положение картинки</param>
         /// <param name="size">размеры картинки</param>
         /// <returns>координаты тайлов на матрице карты, которые нужно перерисовать</returns>
-        public static List<int[]> GetChangedBackground(int[] loc, int[] size)
+        public static List<int[]> GetChangedBackground(Point loc, Size size)
         {
             res.Clear();
-            int x = loc[0] / map.CellSize;
-            int y = loc[1] / map.CellSize;
-            int dx = (loc[0] + size[0]) / map.CellSize;
-            int dy = (loc[1] + size[1]) / map.CellSize;
+            int x = loc.X / map.CellSize;
+            int y = loc.Y / map.CellSize;
+            int dx = (loc.X + size.Width) / map.CellSize;
+            int dy = (loc.Y + size.Height) / map.CellSize;
             
             for(int i = 0; i < dx - x;i++)
             {

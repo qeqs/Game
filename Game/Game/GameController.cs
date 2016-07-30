@@ -17,8 +17,20 @@ namespace Game
         private FramePainter painter = new FramePainter();
         private Dictionary<SpriteEnum, Image> textures;
         private Stopwatch time = new Stopwatch();
+        private Frame frame;
+        private Map map;
+        private Rectangle view;
+        /* 
+        Rectangle rect1 = new Rectangle(x1, y1, 50, 50);
+            Rectangle view = new Rectangle(x - (Width / 2 - 50), y - (Height / 2 - 50), Width, Height);
+            if(rect1.IntersectsWith(view))
+            {
+                g.FillRectangle(Brushes.Red, new Rectangle(rect1.X-view.X, rect1.Y-view.Y, rect1.Width, rect1.Height));
+            }    
+        */
         public GameController()
         {
+            frame = new Frame();
         }
         public void Process(BufferedGraphics gx)
         {
@@ -36,16 +48,16 @@ namespace Game
                 Frame frame = null;
                 while (lag >= Config.MS_PER_UPDATE)
                 {
-                    frame =Update();
+                   Update();
                     lag -= Config.MS_PER_UPDATE;
                 }
 
-                painter.Render(gx,frame,textures,lag / Config.MS_PER_UPDATE);
+                AnimationControl();
+                painter.Render(gx,frame,map,view,textures,lag / Config.MS_PER_UPDATE);
             }
         }
-        private Frame Update()
+        private void Update()
         {
-            Frame frame = new Frame();
 
             //здесь нужно выбрать объекты которые попали в кадр и поместиь их в frame
 
@@ -54,8 +66,13 @@ namespace Game
             {
                 o.Update();
             }
-
-            return frame;
+            
+        }
+        private void AnimationControl()
+        {
+            foreach (IObject o in objects)
+                foreach (Animation a in o.AnimationArray)
+                    a.Animate();
         }
     }
 }

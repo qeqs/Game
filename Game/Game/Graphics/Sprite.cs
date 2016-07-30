@@ -10,8 +10,19 @@ namespace Game.Graphics
     class Sprite
     {
         SpriteEnum name;
-        Point2 loc;
+        Point2 loc;//вроде и не нужно
         Size size;
+        private Point2[] points = new Point2[3];
+        public int CurrentFrame { get; set; } = 0;
+        public Point2[] Points { get { return points; } set { points = value; } }
+        public Bitmap FromImage(Image image,int Frame)
+        {
+            return ((Bitmap)image).Clone(new RectangleF(Size.Width * (Frame), 0, Size.Width, Size.Height), System.Drawing.Imaging.PixelFormat.DontCare);
+        }
+        public Bitmap FromImage(Image image)
+        {
+            return FromImage(image, CurrentFrame);
+        }
         #region props
         public SpriteEnum Name
         {
@@ -21,7 +32,7 @@ namespace Game.Graphics
             }
         }
 
-        internal Point2 Loc
+       public Point2 Loc
         {
             get
             {
@@ -47,16 +58,7 @@ namespace Game.Graphics
             }
         }
         #endregion
-        //
-        //Image[] images; 
-        //public Image this[int i] 
-        //{ 
-        // get { return images[i]; } 
-        //} 
-        //public int Length 
-        //{ 
-        // get { return images.Length; } 
-        //} 
+        
         public Sprite(SpriteEnum name, double x, double y, int w, int h)
         {
             this.name = name;

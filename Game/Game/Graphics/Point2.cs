@@ -16,14 +16,7 @@ namespace Game.Graphics
         {
             this.X = x; this.Y = y;
         }
-        public PointF ToPointF()
-        {
-            return new PointF((float)x, (float)y);
-        }
-        public Point ToPoint()
-        {
-            return new Point((int)x, (int)y);
-        }
+      
         public void Normalize(double k)
         {
             double m = Math.Sqrt(X * X + Y * Y);

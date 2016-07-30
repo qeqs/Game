@@ -33,5 +33,9 @@ namespace Game
                 }
             }
         }
+        public Point2 GetLocationByIndex(int i,int j)
+        {
+            return new Point2(i * CellSize, j * CellSize);
+        }
     }
 }
