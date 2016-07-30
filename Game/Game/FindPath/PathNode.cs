@@ -50,9 +50,18 @@ namespace Game.FindPath
                 {
                     if (closedSet.Count(node => node.Position.ToPoint() == neighbourNode.Position.ToPoint()) > 0)
                         continue;
-                    //PathNode openNode = openSet.Firs
+                    PathNode openNode = openSet.FirstOrDefault(node => node.Position.ToPoint() == neighbourNode.Position.ToPoint());
+
+                    if (openNode == null)
+                        openSet.Add(neighbourNode);
+                    else if (openNode.PathLengthFromStart > neighbourNode.PathLengthFromStart)
+                    {
+                        openNode.CameFrom = currentNode;
+                        openNode.PathLengthFromStart = neighbourNode.PathLengthFromStart;
+                    }
                 }
             }
+            return null;
         }
 
         private static int GetHeuristicPathLength(Point2 from, Point2 to)
@@ -89,7 +98,7 @@ namespace Game.FindPath
                     continue;
                 if (point.ToPoint().Y < 0 || point.ToPoint().Y >= field.GetLength(1))
                     continue;
-                if ((field[point.ToPoint().X, point.ToPoint().Y] != 0) && field[point.ToPoint().X, point.ToPoint().Y] != 1))
+                if ((field[point.ToPoint().X, point.ToPoint().Y] != 0) && (field[point.ToPoint().X, point.ToPoint().Y] != 1))
                     continue;
 
                 PathNode neighbourNode = new PathNode()
