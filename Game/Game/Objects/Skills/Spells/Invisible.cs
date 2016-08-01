@@ -8,7 +8,7 @@ namespace Game.Objects.Skills.Spells
 {
     class Invisible : Spell
     {
-        public override void SpellIt()
+        public override void Cast()
         {
 
         }

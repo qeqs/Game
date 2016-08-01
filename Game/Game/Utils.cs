@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Game.Graphics;
+using Game.Objects;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,10 +36,47 @@ namespace Game
             }
             return res;
         }
-
-        public void Initialize()
+        
+        public static Dictionary<SpriteEnum, Image> InitializeTexures()
         {
-            //TODO: здесь будем загружать все дела и создавать объекты
+            Dictionary<SpriteEnum, Image> tex = new Dictionary<SpriteEnum, Image>();
+            foreach(KeyValuePair<SpriteEnum, Config.SpriteConfig> pair in Config.Sprites)
+            {
+                tex.Add(pair.Key, new Bitmap(pair.Value.texture));
+            }
+            return tex;
+        }//TODO: здесь будем создавать объекты
+        public static List<IObject> InitializeObjects(Map map)
+        {
+            List<IObject> objs = new List<IObject>();
+            return objs;
+        }
+    }
+    class Rand
+    {
+        static Random rand= new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
+        static RNGCryptoServiceProvider _rand = new RNGCryptoServiceProvider();
+       
+        public static bool GetSign(double chance)
+        {
+            int max = (int)DateTime.Now.Ticks & 0x0000FFFF;
+            int min = (int)(chance * max);
+            int number = rand.Next(0, max);
+            return 0 >= number && number <= min;
+        }
+        public static bool GetSign(int chance)
+        {
+            byte[] buff = new byte[1];
+            _rand.GetBytes(buff);
+            return buff[0] % chance == 0;
+        }
+        public static int GetNext(int max)
+        {
+            return rand.Next(0, max);
+        }
+        public static int GetNext(int min,int max)
+        {            
+            return rand.Next(min, max);
         }
     }
 }

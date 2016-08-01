@@ -11,9 +11,9 @@ namespace Game.Objects.Characters
 {
     class Assasin : AbstractCharacter
     {
-        public override Spell CreateSpell()
+        public override List<Spell> CreateSpells()
         {
-            return new Invisible();
+            return new List<Spell>() { new Invisible() };
         }
 
         public override Weapon CreateWeapon()

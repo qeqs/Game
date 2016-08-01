@@ -11,10 +11,9 @@ namespace Game.Objects.Characters
 {
     class Wizard : AbstractCharacter
     {
-        public override Spell CreateSpell()
+        public override List<Spell> CreateSpells()
         {
-            return new Fireball();
-
+            return new List<Spell>() { new Fireball() };
         }
 
         public override Weapon CreateWeapon()

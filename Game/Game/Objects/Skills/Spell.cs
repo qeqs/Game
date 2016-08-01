@@ -9,6 +9,6 @@ namespace Game.Objects.Skills
 {
     abstract class Spell
     {
-        public abstract void SpellIt();
+        public abstract void Cast();
     }
 }

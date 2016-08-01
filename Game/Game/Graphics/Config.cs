@@ -42,7 +42,7 @@ namespace Game.Graphics
             MS_PER_UPDATE = int.Parse(s[0]);
 
             Sprites.Add(SpriteEnum.background, new SpriteConfig(null));//здесь закидываем текстуры
-            //TODO: написать loader для загрузки текстурок
+        
         }
     }
 }

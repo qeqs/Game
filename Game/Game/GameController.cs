@@ -13,12 +13,13 @@ namespace Game
 {
     class GameController
     {
-        private List<IObject> objects = new List<IObject>();
+        private Map map;
         private FramePainter painter = new FramePainter();
         private Dictionary<SpriteEnum, Image> textures;
+        private List<IObject> objects;//new List<IObject>();// самый первый объект это игрок
         private Stopwatch time = new Stopwatch();
         private Frame frame;
-        private Map map;
+        
         private Rectangle view;
         /* 
         Rectangle rect1 = new Rectangle(x1, y1, 50, 50);
@@ -28,8 +29,11 @@ namespace Game
                 g.FillRectangle(Brushes.Red, new Rectangle(rect1.X-view.X, rect1.Y-view.Y, rect1.Width, rect1.Height));
             }    
         */
-        public GameController()
+        public GameController(string mapName)
         {
+            map = new Map(mapName);
+            textures = Utils.InitializeTexures();
+            objects = Utils.InitializeObjects(map);
             frame = new Frame();
         }
         public void Process(BufferedGraphics gx)

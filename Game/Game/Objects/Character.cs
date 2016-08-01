@@ -12,7 +12,7 @@ namespace Game.Objects
 {
     class Character : IObject
     {
-        private Spell _spell;//TODO: List of spells, factory of list of spells
+        private List<Spell> _spells;
         private Weapon _weapon;
         private Body _body;
         private IStrategy strategy;
@@ -26,7 +26,7 @@ namespace Game.Objects
         int currentMana;
         int maxMana;
 
-        int currentHealth;
+        int currentHealth;//if == 0 then state = dead
         int maxHealth;
 
         int regenHp;
@@ -35,12 +35,13 @@ namespace Game.Objects
         double speed;
 
         int level;//max exp = level*100
-        int experience;
+        int experience;//if level*100<=exp then exp = 0 and level++
 
-        int damage;
+        int minDamage;
+        int maxDamage;
 
 
-        //TODO: дописать свойства 
+        //TODO: дописать свойства (додумать свойства)
         #region attr props
         public int Agility
         {
@@ -80,6 +81,7 @@ namespace Game.Objects
             set
             {
                 intelegence = value;
+                Mana = value * 100;
             }
         }
 
@@ -176,14 +178,17 @@ namespace Game.Objects
         {
             get
             {
-                return damage;
+                return Rand.GetNext(minDamage,maxDamage);
             }
+        }
 
-            set
-            {
-                damage = value;
-            }
-        }     public int MaxMana
+        public void SetDamage(int min, int max)
+        {
+            minDamage = min;
+            maxDamage = max;
+        }
+
+        public int MaxMana
         {
             get
             {
@@ -255,13 +260,14 @@ namespace Game.Objects
    
         public Character(AbstractCharacter character)
         {
-            _spell = character.CreateSpell();
+            
+            _spells = character.CreateSpells();
             _weapon = character.CreateWeapon();
         }
 
-        public void SpellIt()
+        public void CastSpell(int spell)
         {
-            _spell.SpellIt();
+            _spells[spell].Cast();
         }
 
         public void Hit()

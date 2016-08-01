@@ -8,7 +8,7 @@ namespace Game.Objects.Skills.Spells
 {
     class Fireball : Spell
     {
-        public override void SpellIt()
+        public override void Cast()
         {
 
         }

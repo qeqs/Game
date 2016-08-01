@@ -9,7 +9,7 @@ namespace Game.Objects.Characters
 {
     abstract class AbstractCharacter
     {
-        public abstract Spell CreateSpell();
+        public abstract List<Spell> CreateSpells();
         public abstract Weapon CreateWeapon();
     }
 }

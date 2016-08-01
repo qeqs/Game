@@ -11,9 +11,9 @@ namespace Game.Objects.Characters
 {
     class Warrior : AbstractCharacter
     {
-        public override Spell CreateSpell()
+        public override List<Spell> CreateSpells()
         {
-            return new LegendaryHit();
+            return new List<Spell>() { new LegendaryHit() };
         }
 
         public override Weapon CreateWeapon()
