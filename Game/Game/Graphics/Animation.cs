@@ -98,12 +98,12 @@ namespace Game.Graphics
         {
             if (isStarted)
             {
-                durationCounter += 0.02;
-                if (durationCounter > Duration/lastframe)
+                durationCounter += Config.MS_PER_UPDATE/1000;
+                if (durationCounter > Duration)
                 {
                     sprite.CurrentFrame++;
                     sprite.Points[0] = new Point2(Center.X + R * Math.Cos(-Angle + 3 * Math.PI / 4), Center.Y - R * Math.Sin(-Angle + 3 * Math.PI / 4));
-                    loc = sprite.Points[0];
+                    //loc = sprite.Points[0];
                     sprite.Points[1] = new Point2(Center.X + R * Math.Cos(-Angle + Math.PI / 4), Center.Y - R * Math.Sin(-Angle + Math.PI / 4));
                     sprite.Points[2] = new Point2((Center.X + R * Math.Cos(-Angle + 5 * Math.PI / 4)), (Center.Y - R * Math.Sin(-Angle + 5 * Math.PI / 4)));
                     durationCounter = 0;
@@ -116,8 +116,9 @@ namespace Game.Graphics
         {
             isStarted = true;
         }
-        public void Abort()
+        public void Abort(bool startFrame)
         {
+            if(startFrame)
             sprite.CurrentFrame = 0;
             isStarted = false;
         }
