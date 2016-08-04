@@ -122,5 +122,14 @@ namespace Game.Graphics
             sprite.CurrentFrame = 0;
             isStarted = false;
         }
+        public void SetAngleToPoint(Point2 e)
+        {
+            double ax = -(Center.X - Points[0].X);//(float)(boxer.Center.X - boxer.Points[0].X+(boxer.Points[2].X- boxer.Points[0].X)/2.0f);
+            double ay = -(Center.Y - Points[0].Y);//(float)(boxer.Center.Y - boxer.Points[0].Y+(boxer.Points[2].Y-boxer.Points[0].Y)/2.0f);
+            double bx = e.X -Center.X;
+            double by = e.Y - Center.Y;
+
+            Angle += Math.Atan2((ax * by - ay * bx), (ax * bx + ay * by)) - Math.PI / 4;
+        }
     }
 }

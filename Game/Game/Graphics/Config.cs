@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Game.Graphics
 {
+    enum KeysEnum
+    {
+        up,down,left,right,mouseLeft,mouseRight,space
+    }
     enum SpriteEnum
     {
         ground,background

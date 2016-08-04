@@ -18,7 +18,7 @@ namespace Game.Strategy
         public KeyboardStrategy(IFormContext context, GameController game, Character character)
         {
             this.context = context;
-            this.context.Handler = new KeyEventHandler(OnKeyPress);
+            this.context.KeysDownHandler = new KeyEventHandler(OnKeyPress);
             this.game = game;
             this.character = character;
         }

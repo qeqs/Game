@@ -1,5 +1,6 @@
 ﻿using Game.Graphics;
 using Game.Objects;
+using Game.FormContext;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,6 +20,7 @@ namespace Game
         private List<IObject> objects;//new List<IObject>();// самый первый объект это игрок
         private Stopwatch time = new Stopwatch();
         private Frame frame;
+        private KeyContext input;
         
         private Rectangle view;
         /* 
@@ -29,12 +31,13 @@ namespace Game
                 g.FillRectangle(Brushes.Red, new Rectangle(rect1.X-view.X, rect1.Y-view.Y, rect1.Width, rect1.Height));
             }    
         */
-        public GameController(string mapName)
+        public GameController(string mapName, Form form)
         {
             map = new Map(mapName);
             textures = Utils.InitializeTexures();
             objects = Utils.InitializeObjects(map);
             frame = new Frame();
+            input = new KeyContext(new FormMainContext((FormMain)form));
         }
         public void Process(BufferedGraphics gx)
         {

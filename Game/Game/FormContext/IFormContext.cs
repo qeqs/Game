@@ -7,8 +7,11 @@ using System.Windows.Forms;
 
 namespace Game.FormContext
 {
-    interface IFormContext
+    public interface IFormContext
     {
-        KeyEventHandler Handler { get; set; }
+        KeyEventHandler KeysDownHandler { get; set; }
+        KeyEventHandler KeysUpHandler { get; set; }
+        MouseEventHandler MouseDownHandler { get; set; }
+        MouseEventHandler MouseUpHandler { get; set; }
     }
 }
